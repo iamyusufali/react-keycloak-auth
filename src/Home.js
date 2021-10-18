@@ -7,10 +7,10 @@ const Home = () => {
   if (!keycloakInstance) return <div>Loading...</div>;
 
   return (
-    <div>
+    <div className="App">
       {isAuthenticated && (
         <div>
-          <div className="App">Welcome to Keycloak World!</div>
+          <h1>Welcome to Keycloak World!</h1>
           <button onClick={() => keycloakInstance.logout()}>Logout</button>
         </div>
       )}
