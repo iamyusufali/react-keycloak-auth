@@ -18,9 +18,11 @@ export const AppContextProvider = (props) => {
       setIsAuthenticated(authenticated);
       setKeycloakInstance(keycloakInstance);
 
-      const refreshed = await keycloakInstance.updateToken(70);
-
-      refreshed && setKeycloakInstance(keycloakInstance);
+      setInterval(() => {
+        keycloakInstance.updateToken(70).then((refreshed) => {
+          refreshed && setKeycloakInstance(keycloakInstance);
+        });
+      }, 6000);
 
       if (authenticated) {
         localStorage.setItem('keycloakToken', keycloakInstance.token);
