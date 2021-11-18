@@ -1,8 +1,10 @@
 {
-  "realm": "React Auth Test",
+  "realm": "crowdstaffing-dev",
   "auth-server-url": "http://localhost:8080/auth/",
   "ssl-required": "external",
-  "resource": "fe-react-test",
-  "public-client": true,
+  "resource": "cs-fe-demo",
+  "credentials": {
+    "secret": "1d1e554d-5f51-4234-aa59-b9d673d27bda"
+  },
   "confidential-port": 0
 }

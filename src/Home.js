@@ -10,7 +10,7 @@ const Home = () => {
     <div className="App">
       {isAuthenticated && (
         <div>
-          <h1>Welcome to Keycloak World!</h1>
+          <h1>Hurray you've logged in.</h1>
           <button onClick={() => keycloakInstance.logout()}>Logout</button>
         </div>
       )}

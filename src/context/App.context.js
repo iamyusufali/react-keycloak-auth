@@ -1,11 +1,15 @@
 import { useEffect, createContext, useState, useContext } from 'react';
 import Keycloak from 'keycloak-js';
 
+import jwt from 'jwt-decode';
+
 const Context = createContext(null);
 
 export const AppContextProvider = (props) => {
   const [keycloakInstance, setKeycloakInstance] = useState();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  keycloakInstance && console.log(jwt(keycloakInstance.token));
 
   useEffect(() => {
     const keycloakInstance = Keycloak('/keycloak.json');
